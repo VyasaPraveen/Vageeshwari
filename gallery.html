@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Sree Vageeshwari Sri Satyanidhi Theertha Vidya Peetam</title>
+    <meta name="description" content="Photo gallery of Sree Vageeshwari Vidya Peetam - events, poojas, construction updates, and student activities.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Sanskrit&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="sacred-top-bar">
+        <span class="sacred-symbol">ॐ</span>
+        <span class="sacred-text">|| శ్రీ వేదపురుషాయ నమః || శ్రీ వాగీశ్వర్యై నమః ||</span>
+        <span class="sacred-symbol">ॐ</span>
+    </div>
+
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon">ॐ</div>
+                    <div class="logo-text">
+                        <span class="logo-main">Sree Vageeshwari</span>
+                        <span class="logo-sub">Sri Satyanidhi Theertha Vidya Peetam</span>
+                    </div>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="project.html" class="nav-link">Project Details</a></li>
+                    <li><a href="future.html" class="nav-link">Future Plans</a></li>
+                    <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li><a href="support.html" class="nav-link nav-cta">Support Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <div class="hero-badge"><span>Sacred Moments & Divine Glimpses</span></div>
+            <h1>Gallery</h1>
+            <p>Glimpses of Our Vedic Journey</p>
+            <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Gallery</div>
+        </div>
+    </section>
+
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-symbol">📸</span>
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">Capturing the Sacred Moments of Our Journey</p>
+                <div class="title-ornament"></div>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="poojas">Poojas & Homams</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="students">Students</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="poojas">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-fire"></i>
+                        <span>Homam</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Sacred Homam</h4>
+                        <p>Vedic fire ritual at the Vidya Peetam</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Vijayadashami</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Vijayadashami Celebration</h4>
+                        <p>Anniversary of the Peetam's founding</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="students">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-book-open"></i>
+                        <span>Veda Adhyayanam</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Veda Class</h4>
+                        <p>Students learning Ruk Samhita recitation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="poojas">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-om"></i>
+                        <span>Special Pooja</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Vishesharchana</h4>
+                        <p>Special pooja on auspicious occasion</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-users"></i>
+                        <span>Guru Purnima</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Guru Purnima</h4>
+                        <p>Celebrating the sacred Guru-Shishya tradition</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="construction">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Bhoomi Pooja</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Bhoomi Pooja</h4>
+                        <p>Ground-breaking ceremony for new building</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="students">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Sanskrit Class</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Vyakarana Class</h4>
+                        <p>Students in Sanskrit grammar session</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-microphone"></i>
+                        <span>Pravachanam</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Spiritual Discourse</h4>
+                        <p>Pravachanam by visiting scholars</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:50px; padding:30px; background:var(--white); border-radius:var(--border-radius-lg); box-shadow:0 5px 20px var(--shadow-light);">
+                <i class="fas fa-camera" style="font-size:2.5rem; color:var(--gold); margin-bottom:15px; display:block;"></i>
+                <h3 style="font-family:'Yatra One',cursive; color:var(--maroon); margin-bottom:10px;">More Photos Coming Soon</h3>
+                <p style="color:var(--text-secondary); max-width:500px; margin:0 auto;">We are updating our gallery with photos from various events, classes, and the construction progress. Please check back soon for more updates.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-decoration"></div>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <div class="logo-icon">ॐ</div>
+                            <div class="logo-text">
+                                <span class="logo-main">Sree Vageeshwari</span>
+                                <span class="logo-sub">Sri Satyanidhi Theertha Vidya Peetam</span>
+                            </div>
+                        </div>
+                        <p>A sacred institution dedicated to the preservation and propagation of Vedic knowledge through the traditional Guru-Shishya parampara.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="project.html">Project Details</a></li>
+                            <li><a href="future.html">Future Plans</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="support.html">Support Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <p><i class="fas fa-phone"></i> <a href="tel:9440038343">9440038343</a> (President)</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:7769866911">77698 66911</a> (Treasurer)</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:7981738456">7981738456</a> (Advisor)</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-verse"><p>|| సర్వే జనాః సుఖినో భవన్తు || ॐ శాన్తిః శాన్తిః శాన్తిః ||</p></div>
+                    <p class="copyright">&copy; 2026 Sree Vageeshwari Sri Satyanidhi Theertha Vidya Peetam. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+</html>
