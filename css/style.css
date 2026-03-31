@@ -77,13 +77,29 @@ img { max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 
+/* Telugu Text - Mallanna Font */
+.telugu-text {
+    font-family: 'Mallanna', 'Tiro Devanagari Sanskrit', sans-serif;
+    font-size: 1.08rem;
+    line-height: 2;
+    color: var(--text-secondary);
+}
+
+.telugu-highlight {
+    font-family: 'Mallanna', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--maroon);
+    font-weight: 600;
+}
+
 /* ---------- Sacred Top Bar ---------- */
 .sacred-top-bar {
     background: var(--gradient-maroon);
     color: var(--gold-light);
     text-align: center;
     padding: 8px 20px;
-    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-family: 'Mallanna', 'Tiro Devanagari Sanskrit', serif;
     font-size: 0.95rem;
     display: flex;
     align-items: center;
@@ -523,8 +539,8 @@ ul { list-style: none; }
 
 .title-vedic {
     display: block;
-    font-family: 'Tiro Devanagari Sanskrit', serif;
-    font-size: 1.1rem;
+    font-family: 'Mallanna', 'Tiro Devanagari Sanskrit', serif;
+    font-size: 1.15rem;
     color: var(--gold);
     margin-bottom: 10px;
     letter-spacing: 1px;
@@ -571,9 +587,9 @@ ul { list-style: none; }
 }
 
 .verse-sanskrit {
-    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-family: 'Mallanna', 'Tiro Devanagari Sanskrit', serif;
     color: var(--gold-light);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 8px;
 }
@@ -704,14 +720,6 @@ ul { list-style: none; }
     font-size: 1.8rem;
     color: var(--maroon);
     margin-bottom: 20px;
-}
-
-.telugu-text {
-    font-family: 'Tiro Devanagari Sanskrit', serif;
-    font-size: 1.05rem;
-    line-height: 2;
-    color: var(--text-secondary);
-    margin-bottom: 15px;
 }
 
 .english-text {
