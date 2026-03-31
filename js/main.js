@@ -1,5 +1,5 @@
 /* ============================================
-   SREE VAGEESHWARI VIDYA PEETAM
+   SREE VAGEESHWARI VIDYA PEETHAM
    Main JavaScript — Multi-Page
    ============================================ */
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (header && sacredBar) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 60) {
+            if (window.scrollY > 60) {
                 header.classList.add('scrolled');
                 sacredBar.style.transform = 'translateY(-100%)';
                 sacredBar.style.transition = 'transform 0.3s ease';
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (backToTop) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 400) {
+            if (window.scrollY > 400) {
                 backToTop.classList.add('visible');
             } else {
                 backToTop.classList.remove('visible');
