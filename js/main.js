@@ -168,6 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ---------- Input Sanitization ----------
+    function sanitizeInput(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
     // ---------- Contact Form ----------
     const contactForm = document.getElementById('contactForm');
 
@@ -175,18 +182,37 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const name = contactForm.querySelector('#name').value.trim();
-            const email = contactForm.querySelector('#email').value.trim();
-            const message = contactForm.querySelector('#message').value.trim();
+            const name = sanitizeInput(contactForm.querySelector('#name').value.trim());
+            const email = sanitizeInput(contactForm.querySelector('#email').value.trim());
+            const phone = sanitizeInput(contactForm.querySelector('#phone').value.trim());
+            const message = sanitizeInput(contactForm.querySelector('#message').value.trim());
 
             if (!name || !email || !message) {
                 showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
 
+            // Name validation — letters, spaces, dots only
+            if (!/^[a-zA-Z\s.]{2,100}$/.test(name)) {
+                showFormMessage('Please enter a valid name (letters only, 2-100 characters).', 'error');
+                return;
+            }
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showFormMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Phone validation — optional, but if provided must be digits
+            if (phone && !/^[0-9+\-\s()]{7,15}$/.test(phone)) {
+                showFormMessage('Please enter a valid phone number.', 'error');
+                return;
+            }
+
+            // Message length check
+            if (message.length < 10 || message.length > 2000) {
+                showFormMessage('Message must be between 10 and 2000 characters.', 'error');
                 return;
             }
 
