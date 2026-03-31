@@ -15,10 +15,10 @@ Header always set X-XSS-Protection "1; mode=block"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
 # Permissions Policy — disable unused browser features
-Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), magnetometer=(), gyroscope=(), accelerometer=(), display-capture=(), interest-cohort=()"
 
 # Content Security Policy
-Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'self';"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'self';"
 
 # Strict Transport Security (HTTPS only)
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -42,13 +42,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 # Prevent directory browsing
 Options -Indexes
 
-# Block PHP execution in uploads/images directory
-<Directory "images">
-    <FilesMatch "\.php$">
-        Order allow,deny
-        Deny from all
-    </FilesMatch>
-</Directory>
+# Block PHP execution in images directory (see images/.htaccess)
 
 # Block common exploit paths
 <IfModule mod_rewrite.c>

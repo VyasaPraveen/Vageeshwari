@@ -1,0 +1,11 @@
+# Block PHP execution in images directory
+<FilesMatch "\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block other server-side scripts
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|aspx|cgi|sh)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

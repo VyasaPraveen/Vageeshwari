@@ -110,10 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add animation class styles
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = `.animate-visible { opacity: 1 !important; transform: translateY(0) !important; }`;
-    document.head.appendChild(styleSheet);
+    // Animation class is defined in css/style.css (.animate-visible)
 
     // ---------- Gallery Filter ----------
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -198,39 +195,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const name = sanitizeInput(contactForm.querySelector('#name').value.trim());
-            const email = sanitizeInput(contactForm.querySelector('#email').value.trim());
-            const phone = sanitizeInput(contactForm.querySelector('#phone').value.trim());
-            const message = sanitizeInput(contactForm.querySelector('#message').value.trim());
+            // Get raw values for validation
+            const rawName = contactForm.querySelector('#name').value.trim();
+            const rawEmail = contactForm.querySelector('#email').value.trim();
+            const rawPhone = contactForm.querySelector('#phone').value.trim();
+            const rawMessage = contactForm.querySelector('#message').value.trim();
 
-            if (!name || !email || !message) {
+            if (!rawName || !rawEmail || !rawMessage) {
                 showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
 
-            // Name validation — letters, spaces, dots only
-            if (!/^[a-zA-Z\s.]{2,100}$/.test(name)) {
-                showFormMessage('Please enter a valid name (letters only, 2-100 characters).', 'error');
+            // Name validation — Unicode letters, spaces, dots (supports Telugu, Hindi, etc.)
+            if (rawName.length < 2 || rawName.length > 100 || /[<>"';&\\\/]/.test(rawName)) {
+                showFormMessage('Please enter a valid name (2-100 characters, no special symbols).', 'error');
                 return;
             }
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
+            if (!emailRegex.test(rawEmail)) {
                 showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
 
             // Phone validation — optional, but if provided must be digits
-            if (phone && !/^[0-9+\-\s()]{7,15}$/.test(phone)) {
+            if (rawPhone && !/^[0-9+\-\s()]{7,15}$/.test(rawPhone)) {
                 showFormMessage('Please enter a valid phone number.', 'error');
                 return;
             }
 
             // Message length check
-            if (message.length < 10 || message.length > 2000) {
+            if (rawMessage.length < 10 || rawMessage.length > 2000) {
                 showFormMessage('Message must be between 10 and 2000 characters.', 'error');
                 return;
             }
+
+            // Sanitize for output only after validation passes
+            const name = sanitizeInput(rawName);
+            const email = sanitizeInput(rawEmail);
+            const phone = sanitizeInput(rawPhone);
+            const message = sanitizeInput(rawMessage);
 
             // Build WhatsApp message
             const subject = contactForm.querySelector('#subject');

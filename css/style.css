@@ -2236,3 +2236,9 @@ ul { list-style: none; }
     .deity-name { font-size: 0.55rem; padding: 5px 3px; }
     .deity-frame.active .deity-name { font-size: 0.6rem; }
 }
+
+/* Animation class — used by JS scroll observer */
+.animate-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
