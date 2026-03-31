@@ -177,10 +177,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---------- Contact Form ----------
     const contactForm = document.getElementById('contactForm');
+    let lastSubmitTime = 0;
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // Honeypot check — if filled, it's a bot
+            const honeypot = contactForm.querySelector('#website');
+            if (honeypot && honeypot.value) {
+                showFormMessage('Form submission blocked.', 'error');
+                return;
+            }
+
+            // Rate limiting — prevent spam submissions (30 second cooldown)
+            const now = Date.now();
+            if (now - lastSubmitTime < 30000) {
+                const wait = Math.ceil((30000 - (now - lastSubmitTime)) / 1000);
+                showFormMessage(`Please wait ${wait} seconds before submitting again.`, 'error');
+                return;
+            }
 
             const name = sanitizeInput(contactForm.querySelector('#name').value.trim());
             const email = sanitizeInput(contactForm.querySelector('#email').value.trim());
@@ -216,17 +232,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // Build WhatsApp message
+            const subject = contactForm.querySelector('#subject');
+            const subjectText = subject ? subject.options[subject.selectedIndex].text : '';
+
+            let waMessage = `🙏 *New Inquiry — Sree Vageeshwari Vidya Peetham*\n\n`;
+            waMessage += `*Name:* ${name}\n`;
+            waMessage += `*Email:* ${email}\n`;
+            if (phone) waMessage += `*Phone:* ${phone}\n`;
+            if (subjectText && subjectText !== 'Select a subject') waMessage += `*Subject:* ${subjectText}\n`;
+            waMessage += `\n*Message:*\n${message}`;
+
+            const whatsappNumber = '919440038343';
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalHTML = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending to WhatsApp...';
             submitBtn.disabled = true;
 
+            lastSubmitTime = Date.now();
+
             setTimeout(() => {
-                showFormMessage('Thank you for your message! We will get back to you soon. 🙏', 'success');
+                window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+                showFormMessage('Redirecting to WhatsApp. Please send the pre-filled message to complete your inquiry. 🙏', 'success');
                 contactForm.reset();
                 submitBtn.innerHTML = originalHTML;
                 submitBtn.disabled = false;
-            }, 1500);
+            }, 800);
         });
     }
 

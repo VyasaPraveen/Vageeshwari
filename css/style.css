@@ -1590,6 +1590,17 @@ ul { list-style: none; }
     border: 1px solid rgba(212, 160, 18, 0.2);
 }
 
+.support-verse .verse-sanskrit {
+    color: var(--maroon);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.support-verse .verse-meaning {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
 .support-message {
     color: var(--text-secondary);
     font-size: 1.02rem;
