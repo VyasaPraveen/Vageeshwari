@@ -12,7 +12,8 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; frame-ancestors 'self';">
+    <meta name="theme-color" content="#800020">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; connect-src 'self';">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Sanskrit&family=Poppins:wght@300;400;500;600;700&family=Mallanna&display=swap" rel="stylesheet">
@@ -81,6 +82,13 @@
 
             <div class="gallery-grid">
                 <!-- Real Images -->
+                <div class="gallery-item" data-category="construction">
+                    <img src="images/bhumipuja-founder-family.jpg" alt="Family of the Pathashala founder during Bhumipuja on Akshaya Tritiya, 20 April 2026" style="width:100%; height:220px; object-fit:cover;">
+                    <div class="gallery-overlay">
+                        <h4>Bhumipuja — Akshaya Tritiya 2026</h4>
+                        <p>Family of the Pathashala founder during Bhumipuja (performed on Akshaya Tritiya 20/04/2026)</p>
+                    </div>
+                </div>
                 <div class="gallery-item" data-category="poojas">
                     <img src="images/narasimha-devaru.jpg" alt="Sri Narasimha Devaru" style="width:100%; height:220px; object-fit:cover;">
                     <div class="gallery-overlay">
@@ -93,13 +101,6 @@
                     <div class="gallery-overlay">
                         <h4>Sri Digvijaya Rama</h4>
                         <p>Srimad Uttaradi Math — Bhagyanagara</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="poojas">
-                    <img src="images/digvijaya-rama-2.jpg" alt="Sri Digvijaya Rama - Close View" style="width:100%; height:220px; object-fit:cover;">
-                    <div class="gallery-overlay">
-                        <h4>Sri Digvijaya Rama</h4>
-                        <p>Srimad Uttaradi Math</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="poojas">
@@ -144,6 +145,12 @@
                 <h3 style="font-family:'Yatra One',cursive; color:var(--maroon); text-align:center; margin-bottom:30px; font-size:1.4rem;"><i class="fas fa-video" style="color:var(--saffron); margin-right:10px;"></i>Video Gallery</h3>
                 <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:25px;">
                     <div style="background:var(--white); border-radius:var(--border-radius); overflow:hidden; box-shadow:0 5px 20px var(--shadow-light);">
+                        <video controls preload="metadata" poster="images/bhumipuja-founder-family.jpg" style="width:100%; display:block;">
+                            <source src="images/bhumipuja-2026.mp4" type="video/mp4">
+                        </video>
+                        <p style="padding:12px 15px; color:var(--text-secondary); font-size:0.88rem; font-weight:500;">Bhumipuja — Akshaya Tritiya 20/04/2026</p>
+                    </div>
+                    <div style="background:var(--white); border-radius:var(--border-radius); overflow:hidden; box-shadow:0 5px 20px var(--shadow-light);">
                         <video controls preload="metadata" poster="images/founder.jpg" style="width:100%; display:block;">
                             <source src="images/vedapathashala-land-1.mp4" type="video/mp4">
                         </video>
@@ -157,7 +164,7 @@
                     </div>
                     <div style="background:var(--white); border-radius:var(--border-radius); overflow:hidden; box-shadow:0 5px 20px var(--shadow-light);">
                         <video controls preload="metadata" poster="images/current-vedapathashala.jpg" style="width:100%; display:block;">
-                            <source src="images/veda-vidyatrulu-current.mp4" type="video/mp4">
+                            <source src="images/veda-vidyarthulu-current.mp4" type="video/mp4">
                         </video>
                         <p style="padding:12px 15px; color:var(--text-secondary); font-size:0.88rem; font-weight:500;">Veda Vidyarthulu — Current Vedapathashala</p>
                     </div>
@@ -211,7 +218,7 @@
                     <div class="footer-contact">
                         <h4>Contact Info</h4>
                         <p><i class="fas fa-phone"></i> <a href="tel:9440038343">9440038343</a> (President)</p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:7769866911">77698 66911</a> (Treasurer)</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:7769866911">7769866911</a> (Treasurer)</p>
                         <p><i class="fas fa-phone"></i> <a href="tel:7981738456">7981738456</a> (Advisor)</p>
                     </div>
                 </div>
